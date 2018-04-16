@@ -1,11 +1,12 @@
 # ICS3U
 # Assignment 2: Logo
-# <your name>
+# <Cade Bancroft>
 
 # adapted from http://www.101computing.net/getting-started-with-pygame/
 
 # Import the pygame library and initialise the game engine
 import pygame
+import math
 pygame.init()
 
 # Define some colours
@@ -14,6 +15,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+DARK_RED = (202, 0, 50)
 
 # Set the screen size (please don't change this)
 SCREENWIDTH = 400
@@ -47,9 +49,13 @@ while carryOn:
     screen.fill(WHITE)
 
     # Queue different shapes and lines to be drawn
-    # pygame.draw.rect(screen, RED, [55, 200, 100, 70], 0)
     # pygame.draw.line(screen, GREEN, [0, 0], [100, 100], 5)
-    # pygame.draw.ellipse(screen, BLACK, [20, 20, 250, 100], 2)
+    pygame.draw.ellipse(screen, DARK_RED, [0, 0, 400, 400], 0)
+    pygame.draw.arc(screen, WHITE, [25, 25, 350, 350], math.radians(90), math.radians(360), 15)
+    pygame.draw.rect(screen, WHITE, [250, 200, 120, 16], 0)
+    pygame.draw.ellipse(screen, WHITE, [100, 100, 40, 40], 0)
+    pygame.draw.rect(screen, WHITE, [184, 100, 16, 180], 0)
+    pygame.draw.rect(screen, WHITE, [184, 280, 60, 16], 0)
 
     # Update the screen with queued shapes
     pygame.display.flip()
